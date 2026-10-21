@@ -1,3 +1,6 @@
+<img width="1222" height="787" alt="image" src="https://github.com/user-attachments/assets/ed9c6742-ad2b-4fec-8173-20d170bb3929" />
+
+
 # Almanca Öğren
 
 Almancaya sıfırdan başlayan, Türkçe konuşan çocuklar için bir Almanca kursu. 
