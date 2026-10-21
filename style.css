@@ -1,0 +1,241 @@
+:root {
+  --bg: #fff7ea;
+  --panel: #ffffff;
+  --ink: #23263b;
+  --muted: #6b6f86;
+  --line: #eadfcd;
+  --accent: #ff7a2f;
+  --accent-ink: #ffffff;
+  --good: #22a861;
+  --good-bg: #e3f7ec;
+  --bad: #e8833a;
+  --bad-bg: #fff0e3;
+  --der: #1d6fe0;
+  --die: #e0364b;
+  --das: #1f9d55;
+  --radius: 20px;
+  --shadow: 0 4px 0 rgba(35, 38, 59, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Trebuchet MS", "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+#app {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 16px 24px 32px;
+}
+
+h1, h2, h3 { line-height: 1.15; margin: 0 0 12px; }
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.7rem; }
+p { margin: 0 0 12px; }
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn {
+  min-height: 56px;
+  padding: 12px 24px;
+  border-radius: 16px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: bold;
+  box-shadow: 0 4px 0 #d85c16;
+  transition: transform 0.08s;
+}
+.btn:active { transform: translateY(3px); box-shadow: 0 1px 0 #d85c16; }
+.btn.secondary { background: var(--panel); color: var(--ink); box-shadow: 0 4px 0 var(--line); border: 2px solid var(--line); }
+.btn.big { width: 100%; font-size: 1.2rem; }
+
+.nav { display: flex; gap: 12px; margin-top: 8px; }
+.nav .btn { flex: 1; font-size: 1.15rem; }
+.nav .btn.secondary { flex: 0 0 auto; }
+.feedback .nav { justify-content: center; }
+.feedback .nav .btn { flex: 0 0 auto; margin-top: 0; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.center { text-align: center; }
+.muted { color: var(--muted); font-size: 0.9rem; }
+
+.card {
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  border: 2px solid var(--line);
+}
+
+/* Home */
+.home-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+.home-head h1 { margin: 0; }
+.total { font-weight: bold; font-size: 1.1rem; background: var(--panel); padding: 8px 16px; border-radius: 999px; border: 2px solid var(--line); }
+.lessons { display: grid; grid-template-columns: repeat(auto-fill, minmax(225px, 1fr)); gap: 12px; margin: 14px 0; }
+.lesson {
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: 6px;
+  text-align: left; padding: 12px 14px; min-height: 104px;
+  background: var(--panel); border: 2px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.lesson:hover:not(:disabled) { border-color: var(--accent); }
+.lesson:disabled { opacity: 0.5; cursor: not-allowed; }
+.lesson .head { display: flex; align-items: center; gap: 10px; width: 100%; }
+.lesson .num { font-size: 0.8rem; color: var(--muted); font-weight: bold; }
+.lesson .pic { font-size: 2.6rem; line-height: 1; flex: none; }
+.lesson .name { font-weight: bold; font-size: 1.05rem; line-height: 1.2; }
+.lesson .stars { font-size: 1rem; letter-spacing: 2px; }
+.btn.review { background: #ffd23f; color: var(--ink); box-shadow: 0 4px 0 #d9a900; min-height: 48px; padding: 8px 18px; }
+.parent { margin-top: 28px; padding-top: 16px; border-top: 2px dashed var(--line); display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.parent label { display: flex; gap: 8px; align-items: center; font-size: 0.9rem; cursor: pointer; }
+.linkish { background: none; color: var(--muted); text-decoration: underline; font-size: 0.9rem; padding: 4px; }
+
+/* Lesson frame */
+.top { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.close { width: 48px; height: 48px; border-radius: 50%; background: var(--panel); border: 2px solid var(--line); font-size: 1.3rem; flex: none; }
+.back { height: 48px; padding: 0 16px; border-radius: 999px; background: var(--panel); border: 2px solid var(--line); font-weight: bold; flex: none; }
+.bar { flex: 1; height: 18px; background: var(--line); border-radius: 999px; overflow: hidden; }
+.bar > div { height: 100%; background: var(--good); border-radius: 999px; transition: width 0.3s; }
+.phase { display: inline-block; font-size: 0.9rem; font-weight: bold; color: var(--muted); margin-bottom: 10px; }
+.steps { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin: 16px 0; }
+.steps span { background: var(--bg); border: 2px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 0.9rem; }
+
+/* Learn card and prompts */
+.bigpic { font-size: 5rem; line-height: 1.1; margin: 8px 0; }
+.bigpic.text { font-weight: bold; font-size: 4.2rem; color: var(--accent); }
+.swatch { width: 120px; height: 120px; border-radius: 24px; margin: 8px auto; border: 3px solid var(--line); }
+.swatch.small { width: 48px; height: 48px; border-radius: 12px; margin: 0 auto 4px; }
+.de { font-size: 2.2rem; font-weight: bold; }
+.tr { font-size: 1.3rem; color: var(--muted); }
+.note { display: inline-block; margin-top: 10px; background: #ffe3e3; color: #b42335; padding: 6px 14px; border-radius: 12px; font-weight: bold; }
+.speak { width: 64px; height: 64px; border-radius: 50%; background: #e8f1ff; font-size: 1.8rem; margin: 10px auto; display: block; border: 2px solid #c9dcff; }
+.speak.huge { width: 120px; height: 120px; font-size: 3.4rem; }
+.art-der { color: var(--der); }
+.art-die { color: var(--die); }
+.art-das { color: var(--das); }
+.question { font-size: 1.15rem; font-weight: bold; margin-bottom: 8px; }
+
+/* Answers */
+.options { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 18px; }
+.opt {
+  min-height: 64px; padding: 12px; border-radius: 16px; background: var(--panel);
+  border: 3px solid var(--line); font-size: 1.2rem; font-weight: bold; box-shadow: var(--shadow);
+}
+.opt .opic { font-size: 2rem; display: block; line-height: 1.2; }
+.opt .otr { font-weight: normal; font-size: 1rem; color: var(--muted); }
+.opt:hover:not(:disabled) { border-color: var(--accent); }
+.opt:disabled { cursor: default; }
+.opt.correct { background: var(--good-bg); border-color: var(--good); }
+.opt.wrong { background: var(--bad-bg); border-color: var(--bad); }
+.opt.art { font-size: 1.6rem; }
+.opt.art.der { color: var(--der); }
+.opt.art.die { color: var(--die); }
+.opt.art.das { color: var(--das); }
+
+.feedback { margin-top: 18px; padding: 14px 18px; border-radius: 16px; font-weight: bold; font-size: 1.15rem; }
+.feedback.correct { background: var(--good-bg); color: #13703f; }
+.feedback.wrong { background: var(--bad-bg); color: #9a4a0c; }
+.feedback .btn { margin-top: 12px; }
+
+/* Letter tiles and sentence tiles */
+.slots, .tiles { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 14px 0; min-height: 60px; }
+.slot { width: 50px; height: 58px; border-radius: 12px; border: 3px dashed var(--line); background: var(--panel); font-size: 1.6rem; font-weight: bold; }
+.slot.filled { border-style: solid; border-color: var(--accent); }
+.tile { min-width: 50px; height: 58px; padding: 0 12px; border-radius: 12px; background: var(--panel); border: 3px solid var(--line); font-size: 1.5rem; font-weight: bold; box-shadow: var(--shadow); }
+.tile.word { font-size: 1.25rem; }
+.tile:disabled { visibility: hidden; }
+.answer-line { min-height: 70px; border-bottom: 3px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; align-items: center; padding: 6px; }
+.slots.correct .slot, .answer-line.correct .tile { border-color: var(--good); background: var(--good-bg); }
+
+/* Typing */
+.typing { display: flex; gap: 10px; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 14px; }
+.typing .art-label { font-size: 1.8rem; font-weight: bold; }
+.typing input {
+  font: inherit; font-size: 1.8rem; font-weight: bold; width: min(320px, 100%);
+  padding: 10px 14px; border-radius: 14px; border: 3px solid var(--line); text-align: center;
+}
+.typing input:focus { outline: none; border-color: var(--accent); }
+.umlauts { display: flex; gap: 8px; justify-content: center; margin-top: 12px; }
+.umlauts button { width: 56px; height: 56px; border-radius: 12px; background: var(--panel); border: 2px solid var(--line); font-size: 1.5rem; font-weight: bold; }
+
+/* End screen */
+.bigstars { font-size: 3.6rem; letter-spacing: 6px; margin: 10px 0; }
+.dim { opacity: 0.25; filter: grayscale(1); }
+.tipbox { background: #fff3c4; border-radius: 16px; padding: 14px 18px; margin: 16px 0; text-align: left; }
+
+@media (max-width: 480px) {
+  body { font-size: 18px; }
+  .de { font-size: 1.8rem; }
+  .bigpic { font-size: 4rem; }
+  .slot { width: 42px; height: 52px; font-size: 1.4rem; }
+  .tile { min-width: 42px; height: 52px; }
+}
+
+/* Lesson cards: one column on narrow screens, two on wide ones (picture or question
+   on the left, the answers on the right) so everything stays on one screen. */
+.split { text-align: center; }
+.split .prompt, .split .answer { min-width: 0; }
+.sentence-tr { font-size: 1.7rem; font-weight: bold; margin: 8px 0; }
+.opt { font-size: 1.35rem; }
+.de { font-size: 2.6rem; }
+.tr { font-size: 1.5rem; }
+.question { font-size: 1.3rem; }
+
+@media (min-width: 860px) {
+  /* Sizes follow the window height, so a big screen gets big text and a laptop still fits. */
+  .split {
+    display: grid; grid-template-columns: 1fr 1.25fr; gap: 32px; align-items: center;
+    padding: 24px 32px; min-height: calc(100vh - 170px);
+  }
+  .split .prompt { border-right: 2px dashed var(--line); padding-right: 32px; }
+  .split .question { font-size: clamp(1.3rem, 3.6vh, 2.2rem); }
+  .split .bigpic { font-size: clamp(6rem, 33vh, 19rem); line-height: 1.05; }
+  .split .bigpic.text { font-size: clamp(5rem, 20vh, 12rem); }
+  .split .swatch { width: clamp(140px, 24vh, 240px); height: clamp(140px, 24vh, 240px); }
+  .split .de { font-size: clamp(2.6rem, 8vh, 5rem); }
+  .split .tr { font-size: clamp(1.5rem, 4vh, 2.5rem); }
+  .split .sentence-tr { font-size: clamp(1.7rem, 5.4vh, 3.2rem); }
+  .split .speak { width: clamp(64px, 10vh, 96px); height: clamp(64px, 10vh, 96px); font-size: clamp(1.8rem, 4.6vh, 2.8rem); }
+  .split .speak.huge { width: clamp(120px, 28vh, 260px); height: clamp(120px, 28vh, 260px); font-size: clamp(3.4rem, 13vh, 7.5rem); }
+  .split .note { font-size: clamp(1.1rem, 3vh, 1.6rem); }
+  .split .btn { min-height: clamp(56px, 9vh, 84px); font-size: clamp(1.15rem, 3vh, 1.7rem); }
+  .split .answer .options { margin-top: 0; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .split .answer .options:has(.art) { grid-template-columns: repeat(3, 1fr); }
+  .split .opt { min-height: clamp(64px, 16vh, 160px); font-size: clamp(1.35rem, 4vh, 2.5rem); }
+  .split .opt .opic { font-size: clamp(2rem, 9vh, 5.2rem); }
+  .split .opt .otr { font-size: clamp(1rem, 2.6vh, 1.5rem); }
+  .split .opt.art { font-size: clamp(1.6rem, 5vh, 3rem); }
+  .split .slot { width: clamp(50px, 8vh, 76px); height: clamp(58px, 9.5vh, 88px); font-size: clamp(1.6rem, 4.4vh, 2.6rem); }
+  .split .tile { min-width: clamp(50px, 8vh, 76px); height: clamp(58px, 9.5vh, 88px); font-size: clamp(1.5rem, 4.2vh, 2.5rem); }
+  .split .tile.word { font-size: clamp(1.25rem, 3.6vh, 2.1rem); padding: 0 18px; }
+  .split .typing input { font-size: clamp(1.8rem, 5vh, 3rem); width: min(440px, 100%); }
+  .split .typing .art-label { font-size: clamp(1.8rem, 5vh, 3rem); }
+  .split .umlauts button { width: clamp(56px, 9vh, 80px); height: clamp(56px, 9vh, 80px); font-size: clamp(1.5rem, 4vh, 2.3rem); }
+  .split .feedback { font-size: clamp(1.15rem, 3.2vh, 1.9rem); }
+  .split .answer .nav { margin-top: 20px; }
+  .split .answer .tipbox { margin-top: 0; font-size: clamp(1rem, 2.8vh, 1.5rem); }
+  .split .answer .steps span { font-size: clamp(0.9rem, 2.4vh, 1.3rem); }
+  .split .prompt h1 { font-size: clamp(2rem, 6vh, 3.6rem); }
+  .split .answer h2 { font-size: clamp(1.7rem, 5vh, 3rem); }
+  .split .answer > p { font-size: clamp(1.1rem, 3.2vh, 1.8rem); }
+
+  .home-head h1 { font-size: clamp(2rem, 5vh, 3rem); }
+  .intro { font-size: clamp(1rem, 2.6vh, 1.4rem); }
+  .lesson { min-height: clamp(92px, 15vh, 150px); }
+  .lesson .pic { font-size: clamp(2.2rem, 5.6vh, 3.4rem); }
+  .lesson .num { font-size: clamp(0.8rem, 1.9vh, 1.05rem); }
+  .lesson .name { font-size: clamp(1.05rem, 2.7vh, 1.45rem); hyphens: manual; }
+  .lesson .stars { font-size: clamp(1rem, 2.6vh, 1.4rem); }
+}
