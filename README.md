@@ -1,6 +1,6 @@
 # Almanca Öğren
 
-Almancaya sıfırdan başlayan, Türkçe konuşan çocuklar için bir Almanca kursu. Tüm kelimeler ve cümleler elle yazılmıştır. Bu yüzden oyun her seferinde aynıdır, yapay zekâ ya da internet bağlantısı gerektirmez.
+Almancaya sıfırdan başlayan, Türkçe konuşan çocuklar için bir Almanca kursu. 
 
 ## Bilgisayara indirme
 
@@ -35,7 +35,7 @@ Kazanılan yıldızlar ve açılan dersler o bilgisayardaki tarayıcıya kaydedi
 
 ## Tablette kullanma
 
-Tabletlerde dosyayı çift tıklayarak açmak genellikle mümkün değildir. Kursu tablette kullanmak için internette yayınlamak gerekir, örneğin GitHub Pages ile. Bu depoda **Settings → Pages** bölümüne gidin. **Source** olarak **Deploy from a branch**'i, **Branch** olarak `main`'i ve `/ (root)` klasörünü seçip **Save**'e tıklayın. Birkaç dakika sonra sayfada kursun bağlantısı görünür. Bu bağlantıyı tabletin tarayıcısında açabilirsiniz.
+Tabletlerde kullanım mevcut versiyon ile mümkün değil. Talep olursa, ileriki versiyonlarda bu özellik eklenebilir. 
 
 ## Kursta neler var?
 
@@ -73,8 +73,3 @@ Ana sayfanın en altında iki düğme vardır:
 - **Ebeveyn: tüm dersleri aç:** Tüm dersleri sırayla bitirmeden açar.
 - **İlerlemeyi sıfırla:** Tüm yıldızları siler ve kursu baştan başlatır.
 
-Bu düğmelerin yanındaki sürüm numarası (ör. "Sürüm 7"), hangi kopyanın açık olduğunu gösterir.
-
-## İçeriği değiştirme
-
-Tüm kelimeler, anlamlar, cümleler ve ipuçları `data.js` dosyasındadır. Dosyanın başındaki açıklama biçimi anlatır. Yeni bir kelime ya da ders eklemek için başka bir dosyayı değiştirmek gerekmez.
